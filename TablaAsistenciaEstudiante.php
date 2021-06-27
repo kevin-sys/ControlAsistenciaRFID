@@ -35,7 +35,7 @@ $Usuario = $_SESSION['Usuario'];
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Control de Asistencia</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
-    <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <ul class="navbar-nav ml-auto mr-0 mr-md-5 my-2 my-md-0">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $Usuario; ?><i class="fas fa-user fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -139,15 +139,15 @@ $Usuario = $_SESSION['Usuario'];
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Codigo/Materia</th>
+                      <th>Codigo</th>
+                      <th>Materia</th>
                       <th>Grupo</th>
-                      <th>Dia</th>
-                      <th>Hora Inicio</th>
-                      <th>Aula</th>
-                      <th>Identificación Estudiante</th>
-                      <th>Primer Nombre</th>
-                      <th>Primer Apellido</th>
-                      <th>Hora de llegada</th>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>Identificación</th>
+                      <th>Nombres</th>
+                      <th>Apellidos</th>
+                      <th>Asistencia</th>
 
 
                     </tr>
@@ -155,20 +155,20 @@ $Usuario = $_SESSION['Usuario'];
                   <tbody>
 
                     <?php
-                    $query = "SELECT * FROM asistencia";
+                    $query = "SELECT * FROM asistenciaestudiante";
                     $result_tasks = mysqli_query($mysqli, $query);
 
                     while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
                       <tr>
-                        <td><?php echo $row['Codigo']; ?></td>
+                        <td><?php echo $row['CodigoMateria']; ?></td>
+                        <td><?php echo $row['NombreMateria']; ?></td>
                         <td><?php echo $row['Grupo']; ?></td>
-                        <td><?php echo $row['PrimerDia']; ?></td>
-                        <td><?php echo $row['HoraInicio1']; ?></td>
-                        <td><?php echo $row['Aula1']; ?></td>
-                        <td><?php echo $row['Identificacion']; ?></td>
-                        <td><?php echo $row['PrimerNombre']; ?></td>
-                        <td><?php echo $row['PrimerApellido']; ?></td>
-                        <td><?php echo $row['FechaRegistro']; ?></td>
+                        <td><?php echo $row['Fecha']; ?></td>
+                        <td><?php echo $row['Hora']; ?></td>
+                        <td><?php echo $row['IdentificacionEstudiante']; ?></td>
+                        <td><?php echo $row['NombreEstudiante']; ?></td>
+                        <td><?php echo $row['ApellidoEstudiante']; ?></td>
+                        <td><?php echo $row['Asistio']; ?></td>
 
                         
                       </tr>
