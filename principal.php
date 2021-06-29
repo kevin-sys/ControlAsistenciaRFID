@@ -92,6 +92,8 @@ $Usuario = $_SESSION['Usuario'];
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="PlanAsignatura.php">Plan de Asignaturas</a><a class="nav-link" href="RelacionDocente.php">Relación Docente</a><a class="nav-link" href="CargaAcademica.php">Carga Academica</a>
+                                            <a class="nav-link" href="FiltroAsistenciaDocente.php">Estadisticas asistencia docente</a>
+                                            <a class="nav-link" href="FiltroAsistenciaEstudiante.php">Estadisticas asistencia estudiante</a>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">Area Administrativa
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
@@ -117,12 +119,12 @@ $Usuario = $_SESSION['Usuario'];
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">Area Academica
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="PlanAsignatura.php">Plan de Asignaturas</a><a class="nav-link" href="PlanDesarrolloAsignatura.php">Plan de desarrollo de Asignaturas</a><a class="nav-link" href="RelacionDocente.php">Relación Docente</a><a class="nav-link" href="CargaAcademica.php">Carga Academica</a>
+                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="PlanAsignatura.php">Plan de Asignaturas</a><a class="nav-link" href="PlanDesarrolloAsignatura.php">Plan de desarrollo de Asignaturas</a><a class="nav-link" href="RelacionDocente.php">Relación Docente</a><a class="nav-link" href="CargaAcademica.php">Carga Academica</a><a class="nav-link" href="CargarAsistencia.php">Cargar formato de asistencia</a>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">Area Administrativa
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="TablaAsistencia.php">Asistencia de Alumnos</a><a class="nav-link" href="TablaEstudiante.php">Listado de Estudiantes</a></nav>
+                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="TablaAsistenciaEstudiante.php">Asistencia de Alumnos</a><a class="nav-link" href="FiltroAsistenciaEstudianteNoAsistidos.php">Inasistencia de Alumnos</a><a class="nav-link" href="TablaEstudiante.php">Listado de Estudiantes</a><a class="nav-link" href="FiltroAsistenciaEstudiante.php">Estadisticas asistencia estudiante</a><a class="nav-link" href="AsistenciaDocente.php">Ingresar a clases</a></nav>
                                     </div>
                                 </nav>
                             </div>
@@ -148,7 +150,7 @@ $Usuario = $_SESSION['Usuario'];
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">Area Administrativa
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="TablaAsistencia.php">Asistencia de Alumnos</a><a class="nav-link" href="Asistencia.php">Ingresar a clases</a></nav>
+                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="MiAsistenciaEstudiante.php">Mis asistencias</a><a class="nav-link" href="MisClasesEstudiante.php">Mis clases</a><a class="nav-link" href="AsistenciaEstudiante.php">Ingresar a clases</a></nav>
                                     </div>
                                 </nav>
                             </div>
@@ -181,61 +183,12 @@ $Usuario = $_SESSION['Usuario'];
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Menu Principal</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Menu Principal</li>
-                    </ol>
+                  
+         
+                   
                     <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Actividades Primarias</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Actividades Secundarias</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Actividades Realizadas</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Actividades No Realizadas</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Sección de Estadisticas</div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Actividad Mensual</div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
+                        <iframe src="https://www.unicesar.edu.co/index.php/es/" width="900" height="700" allow="fullscreen"></iframe>
+
                     </div>
                    
             </main>
