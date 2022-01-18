@@ -1,5 +1,7 @@
 <?php
 
+
+
 include('conexionarchivo.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -18,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 mkdir($dir, 0777, true);
             }
             $file_tmp_name = $_FILES['file']['tmp_name'];
-            //$new_name_file = 'files/' . date('Ymdhis') . '.' . $extension;
+            
             $new_name_file = $dir . file_name($file_name) . '.' . $extension;
             if (copy($file_tmp_name, $new_name_file)) {
                 
@@ -36,3 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     echo '...:::  HA OCURRIDO UN ERROR, VERIFIQUE  ...:::';
 }
+
+?>

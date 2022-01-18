@@ -24,26 +24,23 @@ if (isset($_POST['insertadocente'])) {
   
 
   if(!$result) 
-{ 
-echo" 
-<script language='javascript'> 
-alert('ERROR AL GUARDAR DATOS, PROBABLE CLAVE REPETIDA') 
-window.location='GestionDocente.php' 
-</script>"; 
-exit(); 
-} 
-else 
-{ 
-echo" 
-<script language='javascript'> 
-alert('Registro exitoso, Presione OK para Continuar') 
-window.location='GestionDocente.php' 
-</script>"; 
-}
-//LINEAS COMENTADAS FUNCIONAN PERO POR AHORA NO LAS USARE
- // $_SESSION['message'] = 'Docente Registrado exitosamente!';
-  //$_SESSION['message_type'] = 'success';
-  //header('Location: GestionDocente.php');
+  { 
+    echo" 
+    <script language='javascript'> 
+    alert('ERROR AL GUARDAR DATOS, IDENTIFICACIÓN REPETIDA') 
+    window.location='GestionDocente.php' 
+    </script>"; 
+    exit(); 
+  } 
+  else 
+  { 
+    echo" 
+    <script language='javascript'> 
+    alert('Registro exitoso, Presione aceptar para Continuar') 
+    window.location='GestionDocente.php' 
+    </script>"; 
+  }
+
 
 }
 
